@@ -10,20 +10,35 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 
-let items = [];
+let workItems = [];
+let todayItems = [];
 
 app.get("/", (req, res) => {
-	res.render("index.ejs", {
-		listItems: items
-	});
+	res.redirect("/today");
 });
 
-app.post("/", (req, res) => {
-	// console.log(req.body.newItem);
+app.get("/today", (req, res) => {
+	res.render("today.ejs", {
+		todayListItems: todayItems
+	});
+})
 
+app.get("/work", (req, res) => {
+	res.render("work.ejs", {
+		workListItems: workItems
+	});
+})
+
+app.post("/work", (req, res) => {
 	let item = req.body.newItem;
-	items.push(item);
-	res.redirect("/");
+	workItems.push(item);
+	res.redirect("/work");
+})
+
+app.post("/today", (req, res) => {
+	let item = req.body.newItem;
+	todayItems.push(item);
+	res.redirect("/today");
 })
 
 app.listen(port, () => {

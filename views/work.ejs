@@ -10,18 +10,19 @@
     <title>Document</title>
 </head>
 <body>
+    <%-include("partials/header.ejs")  %>
     <div class="mobile">
         <div class="heading">
-            <h1>Tasks for Today</h1>
+            <h1>Tasks for Work</h1>
         </div>
         <div class="allTasks">
-            <% for (var i = 0; i < listItems.length; i++) { %>
+            <% for (var i = 0; i < workListItems.length; i++) { %>
             <div class="item">
                 <input class="checkbox" type="checkbox">
-                <p class="itemP"><%= listItems[i] %></p>
+                <p class="itemP"><%= workListItems[i] %></p>
             </div>
             <% } %>
-            <form action="/" method="post" class="item">
+            <form action="/work" method="post" class="item">
                 <button class="submit" type="submit" name="button"><img src="images/submit button.png" alt=""></button>
                 <input type="text" name="newItem" placeholder="New Item" autocomplete="off" >
             </form>

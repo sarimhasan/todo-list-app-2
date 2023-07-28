@@ -12,7 +12,7 @@ body {
 }
 .mobile {
     width: 480px;
-    height: 930px;
+    /* height: 930px; */
     border-radius: 49px;
     background: #FFDBAA;
     margin: auto;
@@ -75,4 +75,28 @@ input[type="text"]:focus {
     margin-right: 19px;
     width: 29px;
     height: 27.693px;
+}
+/* Header styles */
+.main {
+    display: flex;
+}
+.subMain{
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FFDBAA;
+}
+a {
+    text-decoration: none;
+    color: #A683E3;
+}
+.work-icon {
+    width: 30px;
+    height: 30px;
+    /* margin-top: 100px; */
+}
+.today-icon {
+    width: 30px;
+    height: 32px;
 }
